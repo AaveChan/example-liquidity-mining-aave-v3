@@ -39,8 +39,8 @@ contract EmissionTestsAVAXLMAvax is BaseTest {
   ITransferStrategyBase constant TRANSFER_STRATEGY =
     ITransferStrategyBase(0xF585F8cf39C1ef5353326e0352B9E237f9A52587); // new deployed strategy
 
-  uint256 constant TOTAL_DISTRIBUTION = 11_185 ether; // 12'600 wAVAX/15 Days
-  uint88 constant DURATION_DISTRIBUTION = 15 days;
+  uint256 constant TOTAL_DISTRIBUTION = 11_102 ether; // 12'600 wAVAX/15 Days
+  uint88 constant DURATION_DISTRIBUTION = 14 days;
 
   address BTCb_A_Token_WHALE = 0xD48573cDA0fed7144f2455c5270FFa16Be389d04;
   address WAVAX_V_TOKEN_WHALE = 0xD48573cDA0fed7144f2455c5270FFa16Be389d04;
@@ -78,12 +78,12 @@ contract EmissionTestsAVAXLMAvax is BaseTest {
     //IERC20(REWARD_ASSET).transfer(EMISSION_ADMIN, TOTAL_DISTRIBUTION);
     //vm.stopPrank();
 
-    _testClaimRewardsForWhale(BTCb_A_Token_WHALE, BTCb_A_TOKEN, 2 * 1_721 ether);
-    _testClaimRewardsForWhale(WAVAX_V_TOKEN_WHALE, WAVAX_V_TOKEN, 2 * 430 ether);
-    _testClaimRewardsForWhale(USDC_A_TOKEN_WHALE, USDC_A_TOKEN, 2 * 1_721 ether);
-    _testClaimRewardsForWhale(USDC_V_TOKEN_WHALE, USDC_V_TOKEN, 2 * 430 ether);
-    _testClaimRewardsForWhale(sAVAX_A_TOKEN_WHALE, sAVAX_A_TOKEN, 2 * 430 ether);
-    _testClaimRewardsForWhale(USDt_A_TOKEN_WHALE, USDt_A_TOKEN, 2 * 860.5 ether);
+    _testClaimRewardsForWhale(BTCb_A_Token_WHALE, BTCb_A_TOKEN, 2 * 1_708 ether);
+    _testClaimRewardsForWhale(WAVAX_V_TOKEN_WHALE, WAVAX_V_TOKEN, 2 * 427 ether);
+    _testClaimRewardsForWhale(USDC_A_TOKEN_WHALE, USDC_A_TOKEN, 2 * 1_708 ether);
+    _testClaimRewardsForWhale(USDC_V_TOKEN_WHALE, USDC_V_TOKEN, 2 * 427 ether);
+    _testClaimRewardsForWhale(sAVAX_A_TOKEN_WHALE, sAVAX_A_TOKEN, 2 * 427 ether);
+    _testClaimRewardsForWhale(USDt_A_TOKEN_WHALE, USDt_A_TOKEN, 2 * 854 ether);
   }
 
   function _testClaimRewardsForWhale(address whale, address asset, uint256 expectedReward) internal {
@@ -140,12 +140,12 @@ contract EmissionTestsAVAXLMAvax is BaseTest {
 
   function _getEmissionsPerAsset() internal pure returns (EmissionPerAsset[] memory) {
     EmissionPerAsset[] memory emissionsPerAsset = new EmissionPerAsset[](6);
-    emissionsPerAsset[0] = EmissionPerAsset({asset: BTCb_A_TOKEN, emission: 2 * 1_721 ether});
-    emissionsPerAsset[1] = EmissionPerAsset({asset: WAVAX_V_TOKEN, emission: 2 * 430 ether});
-    emissionsPerAsset[2] = EmissionPerAsset({asset: USDC_A_TOKEN, emission: 2 * 1_721 ether});
-    emissionsPerAsset[3] = EmissionPerAsset({asset: USDC_V_TOKEN, emission: 2 * 430 ether});
-    emissionsPerAsset[4] = EmissionPerAsset({asset: sAVAX_A_TOKEN, emission: 2 * 430 ether});
-    emissionsPerAsset[5] = EmissionPerAsset({asset: USDt_A_TOKEN, emission: 2 * 860.5 ether});
+    emissionsPerAsset[0] = EmissionPerAsset({asset: BTCb_A_TOKEN, emission: 2 * 1_708 ether});
+    emissionsPerAsset[1] = EmissionPerAsset({asset: WAVAX_V_TOKEN, emission: 2 * 427 ether});
+    emissionsPerAsset[2] = EmissionPerAsset({asset: USDC_A_TOKEN, emission: 2 * 1_708 ether});
+    emissionsPerAsset[3] = EmissionPerAsset({asset: USDC_V_TOKEN, emission: 2 * 427 ether});
+    emissionsPerAsset[4] = EmissionPerAsset({asset: sAVAX_A_TOKEN, emission: 2 * 427 ether});
+    emissionsPerAsset[5] = EmissionPerAsset({asset: USDt_A_TOKEN, emission: 2 * 854 ether});
 
     uint256 totalDistribution;
     for (uint256 i = 0; i < emissionsPerAsset.length; i++) {
