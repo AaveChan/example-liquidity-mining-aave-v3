@@ -45,7 +45,7 @@ contract EmissionTestSDEthereum is BaseTest {
 
   address aETHX_WHALE = 0x849D52316331967b6fF1198e5E32A0eB168D039d;
   function setUp() public {
-    vm.createSelectFork(vm.rpcUrl('mainnet'), 20923316);
+    vm.createSelectFork(vm.rpcUrl('mainnet'), 20927328);
   }
 
   function test_extend() public {
