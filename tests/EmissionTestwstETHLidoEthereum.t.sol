@@ -21,7 +21,7 @@ contract EmissionTestwstETHLidoEthereum is BaseTest {
   }
 
   address constant EMISSION_ADMIN = 0xac140648435d03f784879cd789130F22Ef588Fcd; // aci
-  address constant REWARD_ASSET = AaveV3EthereumLidoAssets.wstETH_UNDERLYING;
+  address constant REWARD_ASSET = AaveV3EthereumLidoAssets.wstETH_A_TOKEN;
   address constant aUSDC = 0x2A1FBcb52Ed4d9b23daD17E1E8Aed4BB0E6079b8; //hardcoded as lib not up to date
   IEACAggregatorProxy constant REWARD_ORACLE =
     IEACAggregatorProxy(AaveV3EthereumLidoAssets.wstETH_ORACLE);
